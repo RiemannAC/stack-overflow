@@ -3,6 +3,10 @@ Rails.application.routes.draw do
   root "posts#index"
 
   resources :posts
-  resources :users
-
+  resources :users do
+   member do
+     post :favorite
+     post :unfavorite
+    end
+  end
 end
