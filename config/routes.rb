@@ -5,9 +5,19 @@ Rails.application.routes.draw do
 
   resources :questions do
     resources :answers, only: [:create, :destroy]
+      member do
+         post :favorite
+         post :unfavorite
+       end
   end
 
-  resources :users
+  resources :users do
+   member do
+     get :favorite
+     get :unfavorite
+    end
+  end
+
   namespace :admin do
     root "questions#index"
     resources :questions, only: [:index, :destroy]
