@@ -37,6 +37,7 @@ gem 'jbuilder', '~> 2.5'
 gem 'devise'
 gem 'ffaker'
 gem 'kaminari'
+gem 'bootstrap4-kaminari-views'
 gem 'bootstrap', '~> 4.1.1'
 gem 'font-awesome-rails'
 gem 'jquery-rails'
@@ -48,6 +49,14 @@ group :development, :test do
   # Adds support for Capybara system testing and selenium driver
   gem 'capybara', '~> 2.13'
   gem 'selenium-webdriver'
+  gem 'rspec-rails', '~> 3.7', '>= 3.7.2'
+  gem "factory_bot_rails", "~> 4.0" 
+  # 產生測試所虛假資料
+  gem 'rails-controller-testing'
+  # 確認view有無render正確畫面
+  gem 'database_cleaner'
+  # 清除測試產生的假資料
+  gem 'shoulda-matchers', '~> 3.1'
 end
 
 group :development do

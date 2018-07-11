@@ -20,7 +20,7 @@
            <% if @user.email == current_user.email %>
              <%= link_to 'Edit Profile', edit_user_path(@user), class: "btn btn-info" %>
              <%= link_to 'Edit Password',edit_user_registration_path, class: "nav-text btn btn-info" %>
-             <%= link_to 'Favorited Post',favorite_user_path(@user), class: "nav-text btn btn-info" %>
+             <%= link_to 'Favorited Question',favorite_user_path(@user), class: "nav-text btn btn-info" %>
            <% end %>
 
        </div>
