@@ -1,6 +1,6 @@
 class UsersController < ApplicationController
   before_action :authenticate_user!
-  before_action :set_user, only: [:show, :edit, :update]
+  before_action :set_user, only: [:show, :edit, :update, :favorite, :unfavorite]
 
       def show
 
@@ -21,6 +21,11 @@ class UsersController < ApplicationController
          render :action => :edit
        end
       end
+
+      def favorites
+        @favorited_posts = @user.favorited_posts.includes(:favorited_users)
+      end
+
 
 
   private

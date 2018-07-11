@@ -1,0 +1,5 @@
+<% if post.is_favorited?(current_user) %>
+  <%= link_to 'Unfavorite', unfavorite_post_path(post), method: :post, class: "btn btn-sm btn-info", id: "unfavorite-#{post.id}" %>
+<% else %>
+  <%= link_to 'Favorite', favorite_post_path(post), method: :post, class: "btn btn-sm btn-primary", id: "favorite-#{post.id}" %>
+<% end %>
