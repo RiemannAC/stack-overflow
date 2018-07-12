@@ -1,0 +1,29 @@
+<div class="container">
+  <div class="row">
+    <table class="table table-hover">
+      <thead class="thead-light">
+        <tr>
+          <th>ID</th>
+          <th>Title</th>
+          <th>Content</th>
+          <th>#</th>
+        </tr>
+      </thead>
+      <tbody>
+        <% @questions.each do |question| %>
+          <tr>
+            <td><%= question.id %></td>
+            <td><%= question.title %></td>
+            <td><%= question.content %></td>
+            <td>
+              <%= link_to "Delete", admin_question_path(question), method: :delete, data: { confirm: "Are you sure??" }, class: "btn btn-primary" %>
+            </td>
+          </tr>
+        <% end %>
+      </tbody>
+    </table>
+    <div class="mx-auto">
+      <%= paginate @questions %>
+    </div>
+  </div>
+</div>
