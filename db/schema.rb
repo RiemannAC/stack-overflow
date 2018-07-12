@@ -10,7 +10,19 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20180709075127) do
+ActiveRecord::Schema.define(version: 20180712092732) do
+
+  create_table "questions", force: :cascade do |t|
+    t.integer "user_id"
+    t.string "title", null: false
+    t.text "content", null: false
+    t.integer "answers_count", default: 0
+    t.integer "favorites_count", default: 0
+    t.integer "votes_count", default: 0
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.index ["user_id"], name: "index_questions_on_user_id"
+  end
 
   create_table "users", force: :cascade do |t|
     t.string "email", default: "", null: false
