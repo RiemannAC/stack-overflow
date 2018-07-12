@@ -4,6 +4,7 @@ class User < ApplicationRecord
   devise :database_authenticatable, :registerable,
          :recoverable, :rememberable, :trackable, :validatable
   before_create :generate_authentication_token
+  validates_presence_of :name, :email, :password
 
   def admin?
     self.role == "admin"
