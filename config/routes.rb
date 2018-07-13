@@ -25,4 +25,11 @@ Rails.application.routes.draw do
     resources :questions, only: [:index, :destroy]
     resources :users, only: [:index, :update, :destroy]
   end
+
+  namespace :api, defaults: {format: :json} do
+    namespace :v1 do
+      post "/login" => "auth#login"
+      post "/logout" => "auth#logout"
+    end
+  end
 end
