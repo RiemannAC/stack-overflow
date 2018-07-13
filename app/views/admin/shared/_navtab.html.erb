@@ -1,0 +1,20 @@
+<div class="navtab my-3">
+  <ul class="nav nav-tabs">
+    <% if current_page? admin_root_path %>
+      <li class="nav-item">
+        <%= link_to "Questions", admin_questions_path, class: 'nav-link active' %>
+      </li>
+    <% else %>
+      <li class="nav-item">
+        <%= link_to_unless_current "Questions", admin_questions_path, class: "nav-link" do %>
+          <%= link_to "Questions", admin_questions_path, class: 'nav-link active' %>
+        <% end %>
+      </li>
+    <% end %>
+    <li class="nav-item">
+      <%= link_to_unless_current "Users", admin_users_path, class: "nav-link" do %>
+        <%= link_to "Users", admin_users_path, class: "nav-link active" %>
+      <% end %>
+    </li>
+  </ul>
+</div>
