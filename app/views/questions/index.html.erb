@@ -1,8 +1,8 @@
-<h1>Questions</h1>
 <div class="container">
   <div class="row">
 
     <div class="question col-md-8">
+      <h1>Ask Questions</h1>
       <%= form_for @question do |f| %>
         <div class="form-group">
           <%= f.label :title %>
@@ -19,5 +19,17 @@
       <% end %>
     </div>
 
+    <div class="question_list col-md-12">
+      <h1>All Question</h1>
+      <% @questions.each do |question|%>
+        <h3><%= question.title %></h3>
+        <p><%= question.content %></p>
+        Asked <%= time_ago_in_words(question.created_at) %> ago
+        <hr>
+      <% end %>
+    </div>
+    <div class="mx-auto">
+      <%= paginate @questions, theme: "twitter-bootstrap-4" %>
+    </div>
   </div>
 </div>
