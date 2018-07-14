@@ -5,16 +5,14 @@
   </button>
 
   <div class="collapse navbar-collapse" id="navbarSupportedContent">
-    <ul class="navbar-nav">
+    <ul class="navbar-nav d-flex">
       <li class="nav-item active">
         <a class="nav-link" href="#">Tags <span class="sr-only">(current)</span></a>
       </li>
       <li class="nav-item">
         <a class="nav-link" href="#">Users</a>
       </li>
-      <li class="nav-item  ml-auto">
-        <a class="nav-link" href="#">Log in</a>
-      </li>
+      <%= render partial: "layouts/user_profile" %>
     </ul>
   </div>
 </nav>

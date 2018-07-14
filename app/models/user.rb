@@ -5,6 +5,8 @@ class User < ApplicationRecord
          :recoverable, :rememberable, :trackable, :validatable
   before_create :generate_authentication_token
 
+  has_many :questions, dependent: :destroy
+
   def admin?
     self.role == "admin"
   end
