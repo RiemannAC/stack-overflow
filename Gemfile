@@ -50,7 +50,13 @@ group :development, :test do
   gem 'capybara', '~> 2.13'
   gem 'selenium-webdriver'
   gem 'rspec-rails', '~> 3.7', '>= 3.7.2'
-  gem "factory_bot_rails", "~> 4.0"
+  gem "factory_bot_rails", "~> 4.0" 
+  # 產生測試所虛假資料
+  gem 'rails-controller-testing'
+  # 確認view有無render正確畫面
+  gem 'database_cleaner'
+  # 清除測試產生的假資料
+  gem 'shoulda-matchers', '~> 3.1'
 end
 
 group :development do
