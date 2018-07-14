@@ -9,6 +9,12 @@
     </div>
 
     <div class="answers-list col-md-12">
+      <% @question.answers.each do |answer| %>
+        <h5><%= answer.user.name %></h5>
+        <p><%= answer.content %></p>
+        Answer <%= time_ago_in_words(answer.created_at) %> ago
+        <hr>
+      <% end %>
     </div>
 
     <div class="answer col-md-12">
