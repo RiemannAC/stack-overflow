@@ -15,6 +15,10 @@ class QuestionsController < ApplicationController
     redirect_back(fallback_location: questions_path)
   end
 
+  def show
+    @question = Question.find(params[:id])
+  end
+
   private
 
   def question_params
