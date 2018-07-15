@@ -1,4 +1,8 @@
 FactoryBot.define do
+  factory :answer_upvote do
+    user nil
+    answer nil
+  end
   factory :question_upvote do
     user nil
     question nil
