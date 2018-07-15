@@ -13,6 +13,13 @@ class AnswersController < ApplicationController
     redirect_back(fallback_location: questions_path)
   end
 
+  def answer_upvote
+    @answer = Answer.find(params[:id])
+    @answer.answer_upvotes.create!(user:current_user)
+    @answer.save
+    redirect_back(fallback_location: question_path)  
+  end
+
   private
 
   def answer_params
