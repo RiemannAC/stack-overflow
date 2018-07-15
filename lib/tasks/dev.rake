@@ -36,4 +36,14 @@ namespace :dev do
     puts "now you have #{Question.count} questions data"
   end
 
+  task fake_favorite: :environment do
+    20.times do
+      user = User.all.sample
+      question = Question.all.sample
+      unless question.favorites.create(user: user)
+        return
+      end
+    end
+    puts "create fake favorites"
+  end
 end
