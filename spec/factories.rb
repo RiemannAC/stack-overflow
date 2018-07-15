@@ -1,4 +1,7 @@
 FactoryBot.define do
+  factory :favorite do
+    
+  end
   factory :answer do
     user nil
     question nil
