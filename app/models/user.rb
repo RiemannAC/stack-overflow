@@ -7,7 +7,12 @@ class User < ApplicationRecord
   validates_presence_of :name, :email, :password
 
   has_many :questions, dependent: :destroy
+
   has_many :answers, dependent: :destroy
+  has_many :answered_questions, through: :answers, source: :question
+
+  has_many :favorites, dependent: :destroy
+  has_many :favorited_questions, through: :favorites, source: :question
 
   def admin?
     self.role == "admin"
