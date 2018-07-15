@@ -1,0 +1,17 @@
+<div class="container">
+  <div class="row">
+    <table class="table table-hover bg-light">
+      <tbody>
+        <% favorited_questions.each do |question| %>
+          <tr>
+            <td><%= link_to question.title, question_path(question) %></td>
+            <td><%= link_to question.content, question_path(question) %></td>
+            <td>
+              <%= render partial: "shared/favorite_button", locals: { quesion: @question } %>
+            </td>
+          </tr>
+        <% end %>
+      </tbody>
+    </table>
+  </div>
+</div>
