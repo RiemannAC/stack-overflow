@@ -5,6 +5,10 @@ Rails.application.routes.draw do
 
   resources :questions do
     resources :answers, only: [:create, :destroy]
+
+    member do
+      post :question_upvote
+    end
   end
 
   resources :users

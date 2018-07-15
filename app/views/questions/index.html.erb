@@ -27,6 +27,8 @@
         <% end %>  
         <p><%= question.content %></p>
         Asked <%= time_ago_in_words(question.created_at) %> ago
+        <%= link_to "Upvote", question_upvote_question_path(question), method: :post, class: 'btn btn-success' %>
+        <%= question.question_upvotes.count %>
         <hr>
       <% end %>
     </div>
