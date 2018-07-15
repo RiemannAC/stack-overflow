@@ -4,7 +4,11 @@ Rails.application.routes.draw do
   root "questions#index"
 
   resources :questions do
-    resources :answers, only: [:create, :destroy]
+    resources :answers, only: [:create, :destroy] do
+      member do
+      post :answer_upvote
+    end
+    end
 
     member do
       post :question_upvote
