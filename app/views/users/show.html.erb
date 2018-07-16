@@ -13,7 +13,11 @@
              <li><strong><%= @user.questions.count %></strong> 已發表的問題數量</li>
              <li><strong><%= @user.answers.count %></strong> 已發表的解答數量</li>
              <li><strong><%= @most_upvotes_question.question_upvotes_count %></strong> 獲得最多 upvote 問題的 upvote 數量</li>
-             <li><strong><%= @most_upvotes_answer.answer_upvotes_count %></strong> 獲得最多 upvote 解答的 upvote 數量</li>
+             <% if @most_upvotes_answer != nil %>
+               <li><strong><%= @most_upvotes_answer.answer_upvotes_count %></strong> 獲得最多 upvote 解答的 upvote 數量</li>
+             <% else %>
+               <li><strong>0</strong> 獲得最多 upvote 解答的 upvote 數量</li>
+             <% end %>
              <li><strong><%= @votes_total %></strong> 獲得的 upvote 總數（問題＋解答）</li>
            </ul>
            <div><%= simple_format @user.intro %></div>
