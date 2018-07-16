@@ -16,7 +16,7 @@
 
     <div class="answers-list col-md-12">
       <h4><%= @question.answers_count %> Answer:</h4>
-      <% @question.answers.each do |answer| %>
+      <% @question.answers.order("answer_upvotes_count desc").each do |answer| %>
         <h5><%= answer.user.name %></h5>
         <p><%= answer.content %></p>
         Answer <%= time_ago_in_words(answer.created_at) %> ago
