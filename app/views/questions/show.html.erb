@@ -5,6 +5,8 @@
       <h3><%= @question.title %></h3>
         <p><%= @question.content %></p>
         Asked <%= time_ago_in_words(@question.created_at) %> ago - by <%= link_to @question.user.name, user_path(@question.user) %>
+        <br>
+        <%= render partial: "shared/favorite", locals: {question: @question} %>
         <hr>
     </div>
 

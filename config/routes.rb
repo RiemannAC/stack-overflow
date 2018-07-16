@@ -4,6 +4,10 @@ Rails.application.routes.draw do
   root "questions#index"
 
   resources :questions do
+    member do
+      post :favorite
+      post :unfavorite
+    end
     resources :answers, only: [:create, :destroy] do
       member do
       post :answer_upvote

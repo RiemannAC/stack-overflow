@@ -26,6 +26,19 @@ class QuestionsController < ApplicationController
     redirect_back(fallback_location: root_path)
   end
 
+  def favorite
+    @question = Question.find(params[:id])
+    @question.favorites.create!(user: current_user)
+    redirect_back(fallback_location: root_path)
+  end
+
+  def unfavorite
+    @question = Question.find(params[:id])
+    favorite = Favorite.where(question: @question, user: current_user).first
+    favorite.destroy
+    redirect_back(fallback_location: root_path)
+  end
+
   private
 
   def question_params

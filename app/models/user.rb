@@ -11,6 +11,9 @@ class User < ApplicationRecord
   has_many :question_upvotes, dependent: :destroy
   has_many :answer_upvotes, dependent: :destroy
 
+  has_many :favorites, dependent: :destroy
+  has_many :favorited_questions, through: :favorites, source: :question
+
   def admin?
     self.role == "admin"
   end
