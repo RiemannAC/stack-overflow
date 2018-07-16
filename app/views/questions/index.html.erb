@@ -31,6 +31,7 @@
         <%= question.question_upvotes_count %>
         <%= render partial: "shared/favorite", locals: {question: question} %>
         <%= question.favorites.count %>
+        <p><strong><%= question.answers.count %></strong> 問題的解答數量</p>
         <hr>
       <% end %>
     </div>
