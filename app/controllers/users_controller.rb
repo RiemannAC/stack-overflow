@@ -3,6 +3,11 @@ class UsersController < ApplicationController
   before_action :set_user, only: [:show, :edit, :update]
 
   def show
+    @most_upvotes_question = @user.questions.order("question_upvotes_count DESC").first
+    @most_upvotes_answer = @user.answers.order("answer_upvotes_count DESC").first
+    @votes_questions = @user.questions.map(&:question_upvotes_count).sum
+    @votes_answers = @user.answers.map(&:answer_upvotes_count).sum
+    @votes_total = @votes_questions + @votes_answers
   end
 
   def edit
