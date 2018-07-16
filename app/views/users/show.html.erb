@@ -10,11 +10,11 @@
            <p><strong><%= @user.twitter%></strong></p>
            <p><strong><%= @user.github %></strong></p>
            <ul class="list-unstyled list-inline">
-             <li><strong><%#= @posted_questions.size %></strong> 已發表的問題數量</li>
-             <li><strong><%#= @posted_answers.size %></strong> 已發表的解答數量</li>
-             <li><strong><%#= @question.upvote_count %></strong> 獲得最多 upvote 問題的 upvote 數量</li>
-             <li><strong><%#= @answer.upvote_count %></strong> 獲得最多 upvote 解答的 upvote 數量</li>
-             <li><strong><%#= @upvotes.count %></strong> 獲得的 upvote 總數（問題＋解答）</li>
+             <li><strong><%= @user.questions.count %></strong> 已發表的問題數量</li>
+             <li><strong><%= @user.answers.count %></strong> 已發表的解答數量</li>
+             <li><strong><%= @most_upvotes_question.question_upvotes_count %></strong> 獲得最多 upvote 問題的 upvote 數量</li>
+             <li><strong><%= @most_upvotes_answer.answer_upvotes_count %></strong> 獲得最多 upvote 解答的 upvote 數量</li>
+             <li><strong><%= @votes_total %></strong> 獲得的 upvote 總數（問題＋解答）</li>
            </ul>
            <div><%= simple_format @user.intro %></div>
            <% if @user == current_user %>
