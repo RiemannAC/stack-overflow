@@ -1,4 +1,6 @@
 class QuestionsController < ApplicationController
+  before_action :authenticate_user!, only: [:create, :question_upvote, :favorite, :unfavorite]
+
   def index
     @questions = Question.order("created_at desc").page(params[:page]).per(15)
     @question = Question.new
