@@ -27,6 +27,17 @@
            <% end %>
          
        </div>
+       <hr>
+       <div id="favorites_list">
+        <h1 class="text-center">Favorites List</h1>
+        <% @user.favorited_questions.order("question_upvotes_count desc").each do |question| %>
+          <h5><%= question.user.name %></h5>
+          <p><%= question.content %></p>
+          Answer <%= time_ago_in_words(question.created_at) %> ago
+          <%= render partial: "shared/favorite", locals: {question: question} %>
+          <hr>
+        <% end %>
+       </div>
       </div>
     </div>
   </div>
