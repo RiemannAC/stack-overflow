@@ -2,6 +2,7 @@
   <div class="container">
     <div class="row">
       <div class="col-sm-12">
+
         <div class="sidebar-block text-center">
           <%= form_for @user do |f| %>
 
@@ -37,38 +38,38 @@
             <div class="clearfix"></div>
             <div class="col-sm-12 no-padding margin-top text-center">
               <div class="input1_wrapper">
-                <label><%= f.label :title, "個人網站連結:" %></label>
+                <label><%= f.label :website, "個人網站連結:" %></label>
                 <div class="input1_inner">
-                  <%= f.text_field :title, class: "input"  %>
+                  <%= f.text_field :website, class: "input"  %>
                 </div>
               </div>
             </div>
             <div class="clearfix"></div>
             <div class="col-sm-12 no-padding margin-top text-center">
               <div class="input1_wrapper">
-                <label><%= f.label :title, "Twitter 連結:" %></label>
+                <label><%= f.label :twitter, "Twitter 連結:" %></label>
                 <div class="input1_inner">
-                  <%= f.text_field :title, class: "input"  %>
+                  <%= f.text_field :twitter, class: "input"  %>
                 </div>
               </div>
             </div>
             <div class="clearfix"></div>
             <div class="col-sm-12 no-padding margin-top text-center">
               <div class="input1_wrapper">
-                <label><%= f.label :title, "GitHub 連結:" %></label>
+                <label><%= f.label :github, "GitHub 連結:" %></label>
                 <div class="input1_inner">
-                  <%= f.text_field :title, class: "input"  %>
+                  <%= f.text_field :github, class: "input"  %>
                 </div>
               </div>
             </div>
             <div class="clearfix"></div>
             <div class="col-sm-12 no-padding margin-top text-center" style="margin-top:30px;">
-              <%= f.submit '資訊輸入', class: "btn-default btn0", style: 'width:30%;' %>
+              <%= f.submit '資訊輸入', class: "btn btn-primary", style: 'width:30%;' %>
             </div>
             <div class="clearfix"></div>
-          </form>
-        <% end %>
+          <% end %>
         </div>
+
         <div class="clearfix"></div>
         <div class="margin-top"></div>
       </div>
