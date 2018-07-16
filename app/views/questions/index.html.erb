@@ -29,6 +29,8 @@
         Asked <%= time_ago_in_words(question.created_at) %> ago - by <%= link_to question.user.name, user_path(question.user) %>
         <%= link_to "Upvote", question_upvote_question_path(question), method: :post, class: 'btn btn-success' %>
         <%= question.question_upvotes_count %>
+        <%= render partial: "shared/favorite", locals: {question: question} %>
+        <%= question.favorites.count %>
         <hr>
       <% end %>
     </div>
